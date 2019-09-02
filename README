@@ -1,0 +1,19 @@
+# What is this?
+This is simple hacked together render farm for blender.
+No auth like flameanco.
+Open source unlike render-crowed.
+
+# Why?
+I wanted a simple solution for local hardware and I like having source code.
+
+
+# How do I run it locally?
+1. `docker build -t blender-image .`
+2. Go into `master/client` run `yarn build` (9FIXME, move to bazel once angular 9)
+3. Run `bazel run //master:master`
+
+# Docker
+#TODO
+
+# Kuberneties
+#TODO
