@@ -26,3 +26,27 @@ py_binary(
     # FIXME, flask requires html to be a templates folder...
     data = glob(["client/dist/client/**"]),
 )
+
+py_test(
+  name = "integrationTest",
+  srcs = [
+    "client.py",
+    "render.py",
+    "master.py",
+    "tests/integrationTest.py"
+  ],
+  deps = [
+      requirement("flask"),
+      requirement("flask-jsonpify"),
+      requirement("flask-sqlalchemy"),
+      requirement("flask-restful"),
+      requirement("Werkzeug"),
+      requirement("jinja2"),
+      requirement("MarkupSafe"),
+      requirement("click"),
+      requirement("itsdangerous"),
+      requirement("pytest")
+  ],
+  # FIXME, flask requires html to be a templates folder...
+  data = glob(["client/dist/client/**", "tests/*"]),
+)
